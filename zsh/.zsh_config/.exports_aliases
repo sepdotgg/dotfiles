@@ -1,0 +1,41 @@
+# thefuck
+# https://github.com/nvbn/thefuck
+eval $(thefuck --alias)
+
+# colorls
+# https://github.com/athityakumar/colorls
+alias ls='colorls --dark --sort-dirs --report'
+alias lc='colorls --tree --dark'
+
+# Python servers
+# Loads up a simple Python HTTP server in the current directory
+
+alias http='cd "$(pwd)" && python -m SimpleHTTPServer'
+
+browse() {
+    echo "Server available at: http://localhost:${1-8000}" && http $1
+}
+
+# pyenv
+# https://github.com/pyenv/pyenv
+export PATH="${HOME}/.pyenv/bin:${PATH}"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# poetry
+# https://github.com/sdispater/poetry
+#
+# Unfortunately 'poetry shell' doesn't activate the venv
+# https://github.com/sdispater/poetry/issues/571
+export PATH="$HOME/.poetry/bin:$PATH"
+
+poetry_activate() {
+    POETRY_VENV_BIN="$(dirname $(poetry run which python))"
+    ACTIVATE_FILE="${POETRY_VENV_BIN}/activate"
+    source $ACTIVATE_FILE
+}
+alias pactivate=poetry_activate
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+source $HOME/.cargo/env

@@ -1,0 +1,2 @@
+#!/bin/zsh
+ZSH_HIGHLIGHT_STYLES[path]=none
