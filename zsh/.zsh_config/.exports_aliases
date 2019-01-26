@@ -10,11 +10,7 @@ alias lc='colorls --tree --dark'
 # Python servers
 # Loads up a simple Python HTTP server in the current directory
 
-alias http='cd "$(pwd)" && python -m SimpleHTTPServer'
-
-browse() {
-    echo "Server available at: http://localhost:${1-8000}" && http $1
-}
+alias browse='cd "$(pwd)" && python -m http.server'
 
 # pyenv
 # https://github.com/pyenv/pyenv
