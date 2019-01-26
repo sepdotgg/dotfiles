@@ -1,0 +1,7 @@
+# Tilix
+# This requires VTE to be properly symlinked on Ubuntu
+# https://gnunn1.github.io/tilix-web/manual/vteconfig/
+# sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
