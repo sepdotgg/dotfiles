@@ -12,6 +12,12 @@ alias lc='colorls --tree --dark'
 
 alias browse='cd "$(pwd)" && python -m http.server'
 
+# Quick shortcuts to get ipv4 and ipv6 addresses of the machine
+alias getip4='hostname -I | awk '"'"'{print $1}'"'"''
+alias getip6='hostname -I | awk '"'"'{print $2}'"'"''
+alias getip=getip4
+
+
 # pyenv
 # https://github.com/pyenv/pyenv
 export PATH="${HOME}/.pyenv/bin:${PATH}"
