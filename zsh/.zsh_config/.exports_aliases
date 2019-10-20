@@ -41,3 +41,7 @@ alias pactivate=poetry_activate
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 source $HOME/.cargo/env
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

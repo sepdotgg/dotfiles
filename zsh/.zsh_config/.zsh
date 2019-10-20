@@ -3,6 +3,10 @@
 # Sep's ZSH configuration
 ##########################
 
+# Add zfunc to the fpath
+
+fpath+=${HOME}/.zsh_config/.zfunc
+
 # Exports and Aliases
 source "${HOME}"/.zsh_config/.exports_aliases
 
