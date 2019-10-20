@@ -7,6 +7,14 @@ eval $(thefuck --alias)
 alias ls='colorls --dark --sort-dirs --report'
 alias lc='colorls --tree --dark'
 
+# Weather by wttr.in: https://github.com/chubin/wttr.in
+weather() {
+  curl -s "wttr.in/$1"
+}
+wttr() {
+  curl -s "wttr.in/$1?format=3"
+}
+
 # Python servers
 # Loads up a simple Python HTTP server in the current directory
 
