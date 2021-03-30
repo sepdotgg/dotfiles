@@ -66,3 +66,16 @@ twitch() {
     streamlink --twitch-low-latency https://twitch.tv/$1 best &>/dev/null &
 
 }
+
+# IntelliJ
+clion() {
+  open -na "Clion.app" --args "$@"
+}
+
+idea() {
+  open -na "IntelliJ IDEA.app" --args "$@"
+}
+
+webstorm() {
+  open -na "WebStorm.app" --args "$@"
+}
