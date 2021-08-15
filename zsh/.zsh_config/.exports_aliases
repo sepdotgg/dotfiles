@@ -67,6 +67,11 @@ twitch() {
 
 }
 
+# Firefox
+firefox() {
+  open -na "Firefox.app" --args "$@"
+}
+
 # IntelliJ
 clion() {
   open -na "Clion.app" --args "$@"
@@ -78,4 +83,25 @@ idea() {
 
 webstorm() {
   open -na "WebStorm.app" --args "$@"
+}
+
+# Databases
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
+
+# Docker
+dbr() {
+  docker run -it $(docker build -q ${1-"."})
+}
+
+dbl() {
+  docker run -p 9000:8080 -it $(docker build -q ${1-"."})
+}
+
+dbrie() {
+  local imgId=$(docker build -q ${1-"."})
+  shift
+  echo "Image ID ${imgId}"
+  docker run -v ~/.aws-lambda-rie:/aws-lambda -p 9000:8080 \
+    --entrypoint /aws-lambda/aws-lambda-rie -it ${imgId} $@
 }
