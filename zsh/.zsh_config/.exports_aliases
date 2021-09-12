@@ -15,6 +15,11 @@ wttr() {
   curl -s "wttr.in/$1?format=3"
 }
 
+# Cheater ...
+cheat() {
+  curl "cheat.sh/$1"
+}
+
 # Python servers
 # Loads up a simple Python HTTP server in the current directory
 
