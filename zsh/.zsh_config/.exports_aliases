@@ -105,3 +105,12 @@ dbrie() {
   docker run -v ~/.aws-lambda-rie:/aws-lambda -p 9000:8080 \
     --entrypoint /aws-lambda/aws-lambda-rie -it ${imgId} $@
 }
+
+# Gradle
+function gw {
+  if [ -x "gradlew" ]; then
+    ./gradlew $@
+  else
+   gradle $@
+  fi
+}
