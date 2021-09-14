@@ -20,6 +20,9 @@ cheat() {
   curl "cheat.sh/$1"
 }
 
+# DynamoDB Local
+alias ddb="docker-compose -f ~/tools/dynamodb-local/docker-compose.yml up"
+
 # Python servers
 # Loads up a simple Python HTTP server in the current directory
 
