@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+const args = process.argv.slice(2);
+
+if (args.length == 0) {
+  console.log(Date.parse(new Date()) / 1000);
+  process.exit(0);
+}
+
+if (args.length !== 1) {
+  console.error('Wrong number of arguments. Expected 1 arg');
+  process.exit(1);
+}
+const time = args[0];
+
+const isNumber = /^\d+$/.test(time);
+
+if (isNumber && (time.length === 10 || time.length === 13)) {
+  const intDate = parseInt(time);
+  const parse = (time.length === 10) ? intDate * 1000 : intDate;
+  const date = new Date(parse);
+  console.log(date);
+} else if (isNumber) {
+  console.error('Invalid epoch format. Needs to be 10 or 13 numbers long');
+  process.exit(1);
+} else {
+  const date = new Date(time);
+  console.log(Date.parse(date));
+}
+
