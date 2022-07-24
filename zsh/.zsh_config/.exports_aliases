@@ -20,6 +20,11 @@ cheat() {
   curl "cheat.sh/$1"
 }
 
+# Port Killer
+killp() {
+  kill -9 $(lsof -ti:$1)
+}
+
 # DynamoDB Local
 alias ddb="docker-compose -f ~/tools/dynamodb-local/docker-compose.yml up"
 
