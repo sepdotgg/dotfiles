@@ -1,15 +1,15 @@
 # .dotfiles
-Collection of dotfiles and other configurations which I use in my Linux development VMs.
+Collection of dotfiles and other configurations which I use in my \*nix development VMs.
 
 ## Overview
 
 My environment consists of the folowing:
 
 - zsh shell
-- [Oh My Zsh](https://ohmyz.sh/) ZSH configuration and enhancements
+- [Prezto](https://github.com/sorin-ionescu/prezto) ZSH configuration and enhancements
 - [Nerd Fonts](https://nerdfonts.com/)
-- [colorls](https://github.com/athityakumar/colorls) - Beautification of the `ls` command, and includes [Font Awesome](https://fontawesome.com/) icons -- pairs well with Nerd Fonts
-- [Spaceship ZSH theme](https://denysdovhan.com/spaceship-prompt/) - with minor tweaks
+- [exa](https://github.com/ogham/exa) - Modern replacement of the `ls` command, and includes [Font Awesome](https://fontawesome.com/) icons -- pairs well with Nerd Fonts
+- [powerlevel10k theme](https://github.com/romkatv/powerlevel10k) - with minor tweaks
 - [neovim](https://neovim.io/)
 
 ## Warning
