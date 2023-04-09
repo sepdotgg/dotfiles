@@ -1,10 +1,18 @@
-# thefuck
+# fuck
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
 
+# disable Prezto Utility module correct -- I prefer fuck
+unsetopt CORRECT
+
+# disable sharing history between open shells
+setopt no_share_history
+unsetopt share_history
+
 # colorls
 # https://github.com/athityakumar/colorls
-alias ls='colorls --dark --sort-dirs --report'
+# alias ls='colorls --dark --sort-dirs --report'
+alias ls='exa --icons'
 alias lc='colorls --tree --dark'
 
 # Weather by wttr.in: https://github.com/chubin/wttr.in
@@ -38,34 +46,6 @@ alias getip4='hostname -I | awk '"'"'{print $1}'"'"''
 alias getip6='hostname -I | awk '"'"'{print $2}'"'"''
 alias getip=getip4
 
-
-# pyenv
-# https://github.com/pyenv/pyenv
-export PATH="${HOME}/.pyenv/bin:${PATH}"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-# JAVA_HOME
-export JAVA_HOME=$(jenv javahome)
-
-# poetry
-# https://github.com/sdispater/poetry
-#
-# Unfortunately 'poetry shell' doesn't activate the venv
-# https://github.com/sdispater/poetry/issues/571
-export PATH="$HOME/.poetry/bin:$PATH"
-
-poetry_activate() {
-    POETRY_VENV_BIN="$(dirname $(poetry run which python))"
-    ACTIVATE_FILE="${POETRY_VENV_BIN}/activate"
-    source $ACTIVATE_FILE
-}
-alias pactivate=poetry_activate
-
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 source $HOME/.cargo/env
@@ -77,25 +57,11 @@ export NVM_DIR="$HOME/.nvm"
 # Streamlink
 twitch() {
     streamlink --twitch-low-latency https://twitch.tv/$1 best &>/dev/null &
-
 }
 
 # Firefox
 firefox() {
   open -na "Firefox.app" --args "$@"
-}
-
-# IntelliJ
-clion() {
-  open -na "Clion.app" --args "$@"
-}
-
-idea() {
-  open -na "IntelliJ IDEA.app" --args "$@"
-}
-
-webstorm() {
-  open -na "WebStorm.app" --args "$@"
 }
 
 # Databases
@@ -127,3 +93,9 @@ function gw {
    gradle $@
   fi
 }
+
+# local Bin
+export PATH="${HOME}/.local/bin:${PATH}"
+
+# GOPATH
+export PATH="${HOME}/go/bin:${PATH}"
