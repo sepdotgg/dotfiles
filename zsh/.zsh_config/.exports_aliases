@@ -52,7 +52,8 @@ source $HOME/.cargo/env
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Streamlink
 twitch() {
@@ -96,6 +97,9 @@ function gw {
 
 # local Bin
 export PATH="${HOME}/.local/bin:${PATH}"
+
+# user profile bin
+export PATH="${HOME}/bin:${PATH}"
 
 # GOPATH
 export PATH="${HOME}/go/bin:${PATH}"
