@@ -12,7 +12,7 @@ unsetopt share_history
 # colorls
 # https://github.com/athityakumar/colorls
 # alias ls='colorls --dark --sort-dirs --report'
-alias ls='exa --icons'
+alias ls='eza --icons'
 alias lc='colorls --tree --dark'
 
 # Weather by wttr.in: https://github.com/chubin/wttr.in
@@ -30,7 +30,7 @@ cheat() {
 
 # Port Killer
 killp() {
-  kill -9 $(lsof -ti:$1)
+  lsof -ti:$1 | xargs -I '{}' kill -9 '{}'
 }
 
 # DynamoDB Local
@@ -103,3 +103,15 @@ export PATH="${HOME}/bin:${PATH}"
 
 # GOPATH
 export PATH="${HOME}/go/bin:${PATH}"
+
+# touch + mkdir -p
+touchp() {
+    mkdir -p "$(dirname "$1")" && touch "$1";
+}
+
+# custom zsh func path
+fpath=(~/.zsh_func(:A) $fpath)
+autoload -Uz anonsh
+
+# dotnet
+export dotnet=/usr/local/share/dotnet/dotnet
